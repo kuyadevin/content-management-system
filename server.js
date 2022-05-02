@@ -22,3 +22,23 @@ const db = mysql.createConnection(
   },
   console.log(`Connected to the company_db database.`)
 );
+
+// Prompt Questions
+inquirer
+ .prompt([
+     {
+         type: 'list',
+         message: 'What would you like to do?',
+         name: 'options',
+         choices:[
+             'View All Employees',
+             'Add Employee',
+             'Update Employee Role',
+             'View All Roles',
+             'Add Role',
+             'View All Departments',
+             'Add Department',
+             'Quit'
+         ]
+     }
+ ])
