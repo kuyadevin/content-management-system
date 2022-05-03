@@ -35,7 +35,7 @@ To run this application you need to install the node modules listed at the top o
 
 * [Repository Link](https://github.com/kuyadevin/employee-management-system)
 
-![Demo](./assets/Employee%20Management%20System.mp4)
+![Demo](https://drive.google.com/file/d/1pH_Gy0YHVa6eT4qP0sIs7bIMWanMGGlE/view)
 
 ## Problems Faced
 
