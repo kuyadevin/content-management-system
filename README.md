@@ -1,4 +1,4 @@
-# employee-management-system
+# Employee Management System
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 This app is an Employee Managment System that is ran completely from the command line. It allows one to see a "Departments" table, "Roles" table, and "Employees" table which contain various information such as salary, manager, and title.
 
@@ -29,12 +29,13 @@ To run this application you need to install the node modules listed at the top o
 * [Express](https://developer.mozilla.org/en-US/docs/Learn/Server-side/Express_Nodejs)
 * [Inquirer](https://www.npmjs.com/package/inquirer)
 * [Console.table](https://www.w3schools.com/jsref/met_console_table.asp)
-* [mySQL]
+* mySQL
 
 ## Demo
 
 * [Repository Link](https://github.com/kuyadevin/employee-management-system)
 
+![Demo](./assets/Employee%20Management%20System.mp4)
 
 ## Problems Faced
 
@@ -43,7 +44,6 @@ I encountered a few problems adding new content to the tables. In the future, th
 ## Authors
 
 * Devin Nguyen
-
 - [Link to Github](https://github.com/kuyadevin)
 - [Link to LinkedIn](https://www.linkedin.com/in/devin-nguyen-9a0676212/)
 
