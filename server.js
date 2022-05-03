@@ -33,20 +33,20 @@ var start = async function(){
          message: 'What would you like to do?',
          name: 'options',
          choices:[
+             'View All Departments',
+             'View All Roles',
              'View All Employees',
+             'Add Department',
+             'Add Role',
              'Add Employee',
              'Update Employee Role',
-             'View All Roles',
-             'Add Role',
-             'View All Departments',
-             'Add Department',
              'Quit'
          ]
      }
  ])
- if (answer.options === 'View All Employees'){
+ if (answer.options === 'View All Departments'){
   const showEmployees = function (){
-    db.query('SELECT * FROM employees', function(err, results){
+    db.query('SELECT * FROM departments', function(err, results){
       console.table(results)
   })
   }
@@ -54,20 +54,36 @@ var start = async function(){
   start();
   } else if (answer.options === 'View All Roles'){
     const showRoles = function (){
-      db.query('SELECT * FROM roles', function(err, results){
+      db.query('SELECT * FROM roles JOIN departments ON roles.department_id = departments.id', function(err, results){
         console.table(results)
     })
     }
     showRoles();
     start();
-  } else if (answer.options === 'View All Departments'){
+  } else if (answer.options === 'View All Employees'){
     const showEmployees = function (){
-      db.query('SELECT * FROM departments', function(err, results){
+      db.query('SELECT * FROM employees JOIN roles ON employees.role_id = roles.id', function(err, results){
         console.table(results)
     })
     }
     showEmployees();
     start();
+  } else if (answer.options === 'Add Employee') {
+    var addEmployee = function(){
+    const addPrompt = inquirer.prompt([
+      {
+        type: 'input',
+        message: 'What is the name of the employee you would like to add?',
+        name: 'newEmployee', 
     }
+    ])
+    const addName = function(){
+      db.query('INSERT INTO employees (name) VALUES'`${addPrompt.input}`, function(err, results){
+        console.table(results)
+      })
+    }
+    addName();
+  };
+  }
 }
 start();

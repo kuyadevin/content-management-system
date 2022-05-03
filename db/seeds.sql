@@ -13,7 +13,7 @@ VALUES (1, "Sales Lead", 100000, 1),
        (5, "Senior Engineer", 200000, 3),
        (6, "Junior Engineer", 150000, 3),
        (7, "HR Manager", 100000, 4),
-       (8, "Lawyer", 200000, 4);
+       (8, "Lawyer", 200000, 5);
 
 INSERT INTO employees (id, first_name, last_name, role_id, manager_id)
 VALUES (1, "Chris", "Evans", 1, null),
