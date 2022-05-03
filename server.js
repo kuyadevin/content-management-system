@@ -47,7 +47,7 @@ var start = async function(){
  if (answer.options === 'View All Departments'){
   const showEmployees = function (){
     db.query('SELECT * FROM departments', function(err, results){
-      console.table(results)
+      console.table(results);
   })
   }
   showEmployees();
@@ -55,7 +55,7 @@ var start = async function(){
   } else if (answer.options === 'View All Roles'){
     const showRoles = function (){
       db.query('SELECT * FROM roles JOIN departments ON roles.department_id = departments.id', function(err, results){
-        console.table(results)
+        console.table(results);
     })
     }
     showRoles();
@@ -68,22 +68,24 @@ var start = async function(){
     }
     showEmployees();
     start();
-  } else if (answer.options === 'Add Employee') {
-    var addEmployee = function(){
-    const addPrompt = inquirer.prompt([
+  } else if (answer.options === 'Add Department') {
+    var addDepartment = async function(){
+    const addPrompt = await inquirer.prompt([
       {
         type: 'input',
-        message: 'What is the name of the employee you would like to add?',
-        name: 'newEmployee', 
+        message: 'What is the name of the department you would like to add?',
+        name: 'newDepartment', 
     }
     ])
+    var newDepartment = addPrompt.input
     const addName = function(){
-      db.query('INSERT INTO employees (name) VALUES'`${addPrompt.input}`, function(err, results){
+      db.query('INSERT INTO deparments (name) VALUES' + newDepartment, function(err, results){
         console.table(results)
       })
     }
     addName();
   };
+  addDepartment();
   }
 }
 start();
