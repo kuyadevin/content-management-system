@@ -44,14 +44,30 @@ var start = async function(){
          ]
      }
  ])
- if (answer.options === 'View All Empoylees'){
+ if (answer.options === 'View All Employees'){
   const showEmployees = function (){
     db.query('SELECT * FROM employees', function(err, results){
-      res.json(results);
+      console.table(results)
   })
-  console.table([results]);
   }
   showEmployees();
-  }
+  start();
+  } else if (answer.options === 'View All Roles'){
+    const showRoles = function (){
+      db.query('SELECT * FROM roles', function(err, results){
+        console.table(results)
+    })
+    }
+    showRoles();
+    start();
+  } else if (answer.options === 'View All Departments'){
+    const showEmployees = function (){
+      db.query('SELECT * FROM departments', function(err, results){
+        console.table(results)
+    })
+    }
+    showEmployees();
+    start();
+    }
 }
 start();
